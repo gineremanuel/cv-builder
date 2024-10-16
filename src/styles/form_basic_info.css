@@ -1,0 +1,60 @@
+.infoSection { 
+  background-color: #15172b;
+  border-radius: 10px;
+  height: 50vh;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.infoSection form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.forms {
+  width: 20%;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.infoSection input {
+  background-color: #303245;
+  border-radius: 7px;
+  border: 0;
+  color: #eee;
+  font-size: 15px;
+  height: 100%;
+  outline: 0; 
+  padding: 7px 15px 0;
+  margin: 10px;
+}
+
+.infoSection button {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  color: #eee;
+  cursor: pointer;
+  font-size: 15px;
+  height: 35px;
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.displayInformation {
+  font-size: 20px;
+  color: #eee;
+  width: 75%;
+}
+
+.experienceSection { 
+  height: 58vh;
+}

@@ -1,0 +1,16 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  align-items: center;
+  background-color: #000;
+  height: 100vh;
+}
+
