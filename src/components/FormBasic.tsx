@@ -1,7 +1,20 @@
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 
-const FormBasicInfo = ({ onSubmit }) => {
-  const { register, handleSubmit } = useForm();
+type BasicFormValues = {
+  name: string;
+  email: string;
+  phoneNumber : number;
+  address: string;
+}
+
+const FormBasicInfo = () => {
+  const { 
+    register,
+    handleSubmit,
+    formState: { errors }
+   } = useForm<BasicFormValues>();
+  const onSubmit : SubmitHandler<BasicFormValues> = (data) => console.log(data);
+  
   return (
     <div className="forms">
       <h2>Personal Information</h2>

@@ -1,10 +1,10 @@
 import { Fragment, useState } from 'react';
-import FormBasicInfo from './components/Form_basic';
-import FormEducationInfo from './components/Form_education';
-import FormExperienceInfo from './components/Form_experience';
-import DisplayEducationInfo from './components/Display_education_info';
-import DisplayBasicInfo from './components/Display_basic_info';
-import DisplayExperienceInfo from './components/Display_experience_info';
+import FormBasicInfo from './components/FormBasic';
+import FormEducationInfo from './components/FormEducation';
+import FormExperienceInfo from './components/FormExperience';
+import DisplayEducationInfo from './components/DisplayEducationInfo';
+import DisplayBasicInfo from './components/DisplayBasicInfo';
+import DisplayExperienceInfo from './components/DisplayExperienceInfo';
 import './styles/form_basic_info.css'
 
 const SectionBasicInfo = () => {
