@@ -8,13 +8,16 @@ type ExperienceFormValues = {
   endDate: string;
 }
 
-const FormExperienceInfo = () => {
+type Props = {
+  onSubmit : SubmitHandler<ExperienceFormValues>;
+}
+
+const FormExperienceInfo = ({onSubmit}: Props) => {
   const { 
     register,
     handleSubmit,
     formState: { errors }
    } = useForm<ExperienceFormValues>();
-  const onSubmit : SubmitHandler<ExperienceFormValues> = (data) => console.log(data);
 
   return (
     <div className="forms">
