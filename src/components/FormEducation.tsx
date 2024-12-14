@@ -1,7 +1,23 @@
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 
-const FormEducationInfo = ({ onSubmit }) => {
-  const { register, handleSubmit } = useForm();
+type EducationFormValues = {
+  school: string;
+  degree: string;
+  startDate : string;
+  endDate: string;
+}
+
+type Props = {
+  onSubmit: SubmitHandler<EducationFormValues>;
+}
+
+const FormEducationInfo = ({onSubmit}: Props) => {
+  const { 
+    register,
+    handleSubmit,
+    formState: { errors }
+   } = useForm<EducationFormValues>();
+
   return (
     <div className="forms">
       <h2>Education</h2>

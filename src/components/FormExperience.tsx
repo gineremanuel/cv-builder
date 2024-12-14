@@ -1,7 +1,24 @@
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 
-const FormExperienceInfo = ({ onSubmit }) => {
-  const { register, handleSubmit } = useForm();
+type ExperienceFormValues = {
+  employer: string;
+  jobTitle: string;
+  mainResponsabilities : string;
+  startDate: string,
+  endDate: string;
+}
+
+type Props = {
+  onSubmit : SubmitHandler<ExperienceFormValues>;
+}
+
+const FormExperienceInfo = ({onSubmit}: Props) => {
+  const { 
+    register,
+    handleSubmit,
+    formState: { errors }
+   } = useForm<ExperienceFormValues>();
+
   return (
     <div className="forms">
       <h2>Professional Experience</h2>
@@ -9,7 +26,11 @@ const FormExperienceInfo = ({ onSubmit }) => {
       <label htmlFor="employer">Employer</label>
       <input 
         type="text"
-        {...register("employer")} />
+        {...register("employer", {required: true})}
+        aria-invalid= {errors.employer ? "true" : "false"} />
+        {errors.employer?.type === "required" && (
+        <p role="alert">Employeer is required</p>
+      )}
       <label htmlFor="jobTitle">Job Title</label>
       <input 
         type="text"

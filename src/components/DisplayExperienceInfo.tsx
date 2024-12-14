@@ -1,6 +1,16 @@
-import { Fragment } from 'react';
+type ExperienceForm = {
+  employer: string;
+  jobTitle: string;
+  mainResponsabilities : string;
+  startDate: string,
+  endDate: string;
+}
 
-const DisplayExperienceInfo = ({ data }) => {
+type Props = {
+  data: ExperienceForm;
+};
+
+const DisplayExperienceInfo = ({ data } : Props) => {
   if (!data) return null;
   return (
     <div className='displayInformation'>

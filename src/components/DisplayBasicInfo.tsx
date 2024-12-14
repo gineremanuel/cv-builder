@@ -1,6 +1,15 @@
-import { Fragment } from 'react';
+type BasicForm = {
+  name: string;
+  email: string;
+  phoneNumber : number;
+  address: string;
+}
 
-const DisplayBasicInfo = ({ data }) => {
+type Props = {
+  data: BasicForm;
+};
+
+const DisplayBasicInfo = ( {data} : Props) => {
   if (!data) return null;
   return (
     <div className="displayInformation">
