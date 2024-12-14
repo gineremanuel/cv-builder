@@ -7,13 +7,16 @@ type EducationFormValues = {
   endDate: string;
 }
 
-const FormEducationInfo = () => {
+type Props = {
+  onSubmit: SubmitHandler<EducationFormValues>;
+}
+
+const FormEducationInfo = ({onSubmit}: Props) => {
   const { 
     register,
     handleSubmit,
     formState: { errors }
    } = useForm<EducationFormValues>();
-  const onSubmit : SubmitHandler<EducationFormValues> = (data) => console.log(data);
 
   return (
     <div className="forms">
