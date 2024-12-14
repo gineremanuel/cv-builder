@@ -7,22 +7,25 @@ type BasicFormValues = {
   address: string;
 }
 
-const FormBasicInfo = () => {
+type Props = {
+  onSubmit: SubmitHandler<BasicFormValues>;
+};
+
+const FormBasicInfo = ({onSubmit}: Props) => {
   const { 
     register,
     handleSubmit,
     formState: { errors }
    } = useForm<BasicFormValues>();
-  const onSubmit : SubmitHandler<BasicFormValues> = (data) => console.log(data);
   
   return (
     <div className="forms">
       <h2>Personal Information</h2>
-      <form onSubmit = { handleSubmit(onSubmit) } >
+      <form onSubmit = {handleSubmit(onSubmit)} >
       <label htmlFor="name">Full name</label>
       <input 
         type="text"
-        {...register("name")} 
+        {...register("name")}
       />
       <label htmlFor="email">Email</label>
       <input 
